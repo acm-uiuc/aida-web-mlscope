@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Content</title>
+    <style>
+      :root {
+        --dark-blue: #1a365d;
+        --light-blue: #7db0e8;
+        --orange: #ff6b35;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-blue);
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      nav {
+        background-color: var(--dark-blue);
+        padding: 10px 0;
+      }
+      nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+      .nav-links a:hover {
+        color: var(--light-blue);
+      }
+      h1 {
+        text-align: center;
+        color: var(--dark-blue);
+      }
+      .week-container {
+        border: 1px solid var(--light-blue);
+        margin-bottom: 20px;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: white;
+      }
+      .week-header {
+        background-color: var(--light-blue);
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+      }
+      .week-header:hover {
+        background-color: #6a9fd4;
+      }
+      .week-header h2 {
+        margin: 0;
+        color: var(--dark-blue);
+      }
+      .week-content {
+        display: none;
+        padding: 20px;
+      }
+      .week-content.active {
+        display: block;
+      }
+      .toggle-icon::after {
+        content: "\25BC";
+        color: var(--dark-blue);
+      }
+      .week-header.active .toggle-icon::after {
+        content: "\25B2";
+      }
+      a {
+        color: var(--orange);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <a href="index.html">
+          <img src="aida-logo.jpeg" alt="Logo" class="logo" />
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Problems</a>
+          <a href="solutions.html">Solutions</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Solutions</h1>
+      <div id="content"></div>
+    </div>
+
+    <script>
+      const problemsData = [
+        // Add more weeks here as needed
+      ];
+
+      const solutionsData = [
+        {
+          week: 1,
+          title: "House Price Prediction Solution",
+          content: `
+                    <p>Solutions for Week 1 will be uploaded here after the submission deadline.</p>
+                `,
+        },
+        // Add more solution weeks here as needed
+      ];
+
+      function createWeekElement(weekData) {
+        const weekElement = document.createElement("div");
+        weekElement.className = "week-container";
+        weekElement.innerHTML = `
+                <div class="week-header">
+                    <h2>Week ${weekData.week}: ${weekData.title}</h2>
+                    <span class="toggle-icon"></span>
+                </div>
+                <div class="week-content">
+                    ${weekData.content}
+                </div>
+            `;
+        return weekElement;
+      }
+
+      function toggleWeek(weekHeader) {
+        weekHeader.classList.toggle("active");
+        const content = weekHeader.nextElementSibling;
+        content.classList.toggle("active");
+      }
+
+      function loadContent(data) {
+        const contentDiv = document.getElementById("content");
+        contentDiv.innerHTML = "";
+        data.forEach((week) => {
+          const weekElement = createWeekElement(week);
+          contentDiv.appendChild(weekElement);
+
+          const weekHeader = weekElement.querySelector(".week-header");
+          weekHeader.addEventListener("click", () => toggleWeek(weekHeader));
+        });
+
+        // Open the first week by default
+        const firstWeekHeader = document.querySelector(".week-header");
+        if (firstWeekHeader) {
+          toggleWeek(firstWeekHeader);
+        }
+      }
+
+      // Determine which page to load based on the current URL
+      const currentPage = window.location.pathname.includes("solutions.html")
+        ? "solutions"
+        : "problems";
+      loadContent(currentPage === "solutions" ? solutionsData : problemsData);
+    </script>
+  </body>
+</html>
