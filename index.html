@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Content</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .week-container {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .week-header {
+            background-color: #f4f4f4;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .week-header h2 {
+            margin: 0;
+        }
+        .week-content {
+            display: none;
+            padding: 20px;
+        }
+        .week-content.active {
+            display: block;
+        }
+        .toggle-icon::after {
+            content: '\25BC'; /* Down arrow */
+        }
+        .week-header.active .toggle-icon::after {
+            content: '\25B2'; /* Up arrow */
+        }
+    </style>
+</head>
+<body>
+    <h1>Course Content</h1>
+    <div id="course-content"></div>
+
+    <script>
+        const weekData = [
+            {
+                week: 1,
+                title: "House Price Prediction",
+                content: `
+                    <p>In this task, the goal is to predict house prices in King County using a regression model. Given features like square footage, number of bedrooms, and location, you will utilize models to accurately estimate house prices. This involves data cleaning, model training/utilization, and model performance evaluation.</p>
+                    
+                    <h4>Dataset:</h4>
+                    <p><a href="https://www.kaggle.com/datasets/harlfoxem/housesalesprediction" target="_blank" rel="noopener noreferrer">House Sales Prediction Dataset</a></p>
+                    <p>The dataset contains house sales data from King County, Washington. It has 21,613 rows and 21 columns, covering features like price, sqft_living, bedrooms, bathrooms, waterfront, and zip code, among others. The price column is the target variable, and the other features are used to predict house prices.</p>
+                    
+                    <h4>Goals/tasks:</h4>
+                    <ul>
+                        <li>Clean dataset (remove unnecessary columns from the dataset to use it for regression)</li>
+                        <li>Train/test split</li>
+                        <li>Set up code for training model (using library of choice)</li>
+                        <li>Train model with hyperparameters</li>
+                        <li>Test model against test data</li>
+                    </ul>
+                    
+                    <h4>Potential Skills:</h4>
+                    <h5>Starter</h5>
+                    <ul>
+                        <li>Linear Regression</li>
+                        <li>scikit-learn</li>
+                    </ul>
+                    <h5>Bonus</h5>
+                    <ul>
+                        <li>Simple Decision Tree</li>
+                        <li>Random Forest</li>
+                        <li>PyTorch</li>
+                    </ul>
+                    
+                    <h4>Useful Package Documentation:</h4>
+                    <ol>
+                        <li><strong>NumPy</strong> (for numerical computations): <a href="https://numpy.org/doc/" target="_blank" rel="noopener noreferrer">NumPy Documentation</a></li>
+                        <li><strong>pandas</strong> (for data manipulation): <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">pandas Documentation</a></li>
+                        <li><strong>scikit-learn</strong> (for model training and evaluation): <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer">scikit-learn Documentation</a></li>
+                        <li><strong>matplotlib</strong> (for data visualization): <a href="https://matplotlib.org/stable/contents.html" target="_blank" rel="noopener noreferrer">matplotlib Documentation</a></li>
+                        <li><strong>PyTorch</strong> (for deep learning-based models): <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener noreferrer">PyTorch Documentation</a></li>
+                    </ol>
+                `
+            },
+            // Add more weeks here as needed
+        ];
+
+        function createWeekElement(weekData) {
+            const weekElement = document.createElement('div');
+            weekElement.className = 'week-container';
+            weekElement.innerHTML = `
+                <div class="week-header">
+                    <h2>Week ${weekData.week}: ${weekData.title}</h2>
+                    <span class="toggle-icon"></span>
+                </div>
+                <div class="week-content">
+                    ${weekData.content}
+                </div>
+            `;
+            return weekElement;
+        }
+
+        function toggleWeek(weekHeader) {
+            weekHeader.classList.toggle('active');
+            const content = weekHeader.nextElementSibling;
+            content.classList.toggle('active');
+        }
+
+        const courseContent = document.getElementById('course-content');
+        weekData.forEach(week => {
+            const weekElement = createWeekElement(week);
+            courseContent.appendChild(weekElement);
+
+            const weekHeader = weekElement.querySelector('.week-header');
+            weekHeader.addEventListener('click', () => toggleWeek(weekHeader));
+        });
+
+        // Open the first week by default
+        const firstWeekHeader = document.querySelector('.week-header');
+        if (firstWeekHeader) {
+            toggleWeek(firstWeekHeader);
+        }
+    </script>
+</body>
+</html>
