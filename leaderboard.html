@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course Leaderboard</title>
+    <title>ML-Scope Leaderboard</title>
     <style>
       :root {
         --dark-blue: #1a365d;
@@ -129,12 +129,15 @@
     <div class="container">
       <h1>Leaderboard</h1>
       <div id="podium" class="podium">
+        <!-- Podium will be populated by JavaScript -->
       </div>
       <div id="leaderboard" class="leaderboard">
+        <!-- Leaderboard will be populated by JavaScript -->
       </div>
     </div>
 
     <script>
+      // Sample JSON data (you can replace this with your own data)
       const leaderboardData = [
         { name: "", score: 0 },
         { name: "", score: 0 },
@@ -171,8 +174,10 @@
         const podium = document.getElementById("podium");
         const leaderboard = document.getElementById("leaderboard");
 
+        // Sort the leaderboard data by score in descending order
         leaderboardData.sort((a, b) => b.score - a.score);
 
+        // Create podium
         const medals = ["🥇", "🥈", "🥉"];
         let podiumHTML = "";
         const maxScore = Math.max(
@@ -181,12 +186,13 @@
         const minScore = Math.min(
           ...leaderboardData.slice(0, 3).map((item) => item.score)
         );
-        const maxHeight = 300; 
-        const minHeight = 100;
+        const maxHeight = 200; // Maximum height for the tallest bar
+        const minHeight = 100; // Minimum height for the shortest bar
 
         for (let i = 0; i < 3 && i < leaderboardData.length; i++) {
           const rank = ["1st", "2nd", "3rd"][i];
           const score = leaderboardData[i].score;
+          // Calculate relative height
           const height =
             minHeight +
             ((score - minScore) / (maxScore - minScore)) *
@@ -201,6 +207,7 @@
         }
         podium.innerHTML = podiumHTML;
 
+        // Create leaderboard
         let leaderboardHTML = "";
         for (let i = 3; i < leaderboardData.length; i++) {
           leaderboardHTML += createLeaderboardItem(
@@ -212,6 +219,7 @@
         leaderboard.innerHTML = leaderboardHTML;
       }
 
+      // Call the function when the page loads
       window.onload = updateLeaderboard;
     </script>
   </body>
