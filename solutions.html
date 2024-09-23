@@ -123,7 +123,34 @@
           week: 1,
           title: "House Price Prediction Solution",
           content: `
-                    <p>Solutions for Week 1 will be uploaded here after the submission deadline.</p>
+                    <h1>Week 1 Solutions</h1>
+                   
+                    <h2>Summary</h2>
+                    <h4>Baseline Models:</h4>
+
+<ul>
+<li>Linear Regression yielded an R² score of 0.71, which is a reasonable baseline, but not highly accurate for predicting house prices.</li>
+<li>Decision Tree Classifier performed very poorly with a score of 0.0096, indicating it's unsuitable for this regression task.</li>
+<li>Random Forest Regressor achieved a significantly better score of 0.84, making it the best among the baseline models.</li>
+</ul>
+
+<h4>Highest-Performing Solutions:</h4>
+<ul>
+<li>Gradient Boosting Regressor after tuning hyperparameters (max_depth=5, n_estimators=200) scored 0.90, showing that ensemble methods with boosting can yield very strong results.</li>
+<li>Random Forest Regressor (with 500 estimators) performed similarly, with a score of 0.89, demonstrating that increasing the number of trees from 100 to 500 provided a marginal improvement.</li>
+</ul>
+
+<h4>Takeaways:</h4>
+
+<ul>
+<li>Feature Scaling and hyperparameter tuning were essential for achieving high accuracy.</li>
+<li>Ensemble methods like Random Forest and Gradient Boosting Regressor consistently outperformed linear models.</li>
+<li>Grid search allowed further refinement of hyperparameters, slightly improving the model's performance.</li>
+</ul>
+                     <a target="_blank" href="https://colab.research.google.com/drive/1u9JW5vECvlZ6huyvz7xrhJj2HmDrlmb_?authuser=5#scrollTo=nsSyl5JME8nn">Link to Notebook</a>
+                    <br>
+                    <a target="_blank" href="https://docs.google.com/presentation/d/1qy1OWxAyliL4PSqrljxphXdFPLurtd8j52xF4pKdMwA/edit?usp=sharing">Link to Slides</a>
+
                 `,
         },
         // Add more solution weeks here as needed

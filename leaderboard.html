@@ -128,25 +128,23 @@
 
     <div class="container">
       <h1>Leaderboard</h1>
-      <div id="podium" class="podium">
-        <!-- Podium will be populated by JavaScript -->
-      </div>
-      <div id="leaderboard" class="leaderboard">
-        <!-- Leaderboard will be populated by JavaScript -->
-      </div>
+      <div id="podium" class="podium"></div>
+      <div id="leaderboard" class="leaderboard"></div>
     </div>
 
     <script>
-      // Sample JSON data (you can replace this with your own data)
       const leaderboardData = [
-        { name: "", score: 0 },
-        { name: "", score: 0 },
-        { name: "", score: 0 },
-        { name: "", score: 0 },
-        { name: "", score: 0 },
-        { name: "", score: 0 },
-        { name: "", score: 0 },
-        { name: "", score: 0 },
+        { name: "Kaavya Mahajan", score: 98 },
+        { name: "Aaren Kang", score: 96 },
+        { name: "Anish Bellamkonda", score: 93 },
+        { name: "Yongrong Lu", score: 91 },
+        { name: "Seung Wook", score: 90 },
+        { name: "Jayden Li", score: 80 },
+        { name: "Aaditya Ghimire", score: 72 },
+        { name: "Albert Bogdan", score: 71 },
+        { name: "Abhiram Batchali", score: 70 },
+        { name: "Huan Lin", score: 70 },
+        { name: "Prahit Yaugand", score: 70 },
       ];
 
       function createPodiumItem(rank, name, score, medal, height) {
@@ -174,10 +172,8 @@
         const podium = document.getElementById("podium");
         const leaderboard = document.getElementById("leaderboard");
 
-        // Sort the leaderboard data by score in descending order
         leaderboardData.sort((a, b) => b.score - a.score);
 
-        // Create podium
         const medals = ["🥇", "🥈", "🥉"];
         let podiumHTML = "";
         const maxScore = Math.max(
@@ -186,8 +182,8 @@
         const minScore = Math.min(
           ...leaderboardData.slice(0, 3).map((item) => item.score)
         );
-        const maxHeight = 200; // Maximum height for the tallest bar
-        const minHeight = 100; // Minimum height for the shortest bar
+        const maxHeight = 300;
+        const minHeight = 200;
 
         for (let i = 0; i < 3 && i < leaderboardData.length; i++) {
           const rank = ["1st", "2nd", "3rd"][i];
@@ -207,7 +203,6 @@
         }
         podium.innerHTML = podiumHTML;
 
-        // Create leaderboard
         let leaderboardHTML = "";
         for (let i = 3; i < leaderboardData.length; i++) {
           leaderboardHTML += createLeaderboardItem(
@@ -219,7 +214,6 @@
         leaderboard.innerHTML = leaderboardHTML;
       }
 
-      // Call the function when the page loads
       window.onload = updateLeaderboard;
     </script>
   </body>
