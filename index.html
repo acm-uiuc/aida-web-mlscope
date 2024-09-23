@@ -48,14 +48,14 @@
         text-align: center;
         color: var(--dark-blue);
       }
-      .week-container {
+      .project-container {
         border: 1px solid var(--light-blue);
         margin-bottom: 20px;
         border-radius: 5px;
         overflow: hidden;
         background-color: white;
       }
-      .week-header {
+      .project-header {
         background-color: var(--light-blue);
         padding: 10px;
         cursor: pointer;
@@ -64,25 +64,25 @@
         align-items: center;
         transition: background-color 0.3s ease;
       }
-      .week-header:hover {
+      .project-header:hover {
         background-color: #6a9fd4;
       }
-      .week-header h2 {
+      .project-header h2 {
         margin: 0;
         color: var(--dark-blue);
       }
-      .week-content {
+      .project-content {
         display: none;
         padding: 20px;
       }
-      .week-content.active {
+      .project-content.active {
         display: block;
       }
       .toggle-icon::after {
         content: "\25BC";
         color: var(--dark-blue);
       }
-      .week-header.active .toggle-icon::after {
+      .project-header.active .toggle-icon::after {
         content: "\25B2";
       }
       a {
@@ -129,8 +129,8 @@
     <div class="container">
       <h1>MLScope</h1>
       <center>
-        <a target="_blank" href="https://forms.gle/fGnFDcE8JiHc9ZJh8"
-          ><button class="btn">Week 1 Submission</button></a
+        <a target="_blank" href="https://forms.gle/1DKpSa5KUvAJi9RF8"
+          ><button class="btn">Project 2 Submission</button></a
         >
       </center>
       <div id="content"></div>
@@ -139,7 +139,7 @@
     <script>
       const problemsData = [
         {
-          week: 1,
+          project: 1,
           title: "House Price Prediction",
           content: `
                     <p>In this task, the goal is to predict house prices in King County using a regression model. Given features like square footage, number of bedrooms, and location, you will utilize models to accurately estimate house prices. This involves data cleaning, model training/utilization, and model performance evaluation.</p>
@@ -183,57 +183,105 @@
                     </ol>
                 `,
         },
-        // Add more weeks here as needed
+        {
+          project: 2,
+          title: "Heart Disease Classifier",
+          content: `
+                    <p>In this task, the goal is to classify whether a given patient has heart disease using a classifier model. Given features like age, sex, chest pain type, blood pressure, etc. you will utilize models to accurately predict whether or not a patient has heart disease. This involves data cleaning, model training/utilization, and model performance evaluation.</p>
+                    
+                    <h4>Dataset:</h4>
+                    <p><a href="https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset" target="_blank" rel="noopener noreferrer">Heart Disease Classifier Dataset</a></p>
+                    <p>The dataset contains heart data attributes from four medical databases (Cleveland, Hungary, Switzerland, Long Beach). It has 1026 rows and 15 columns, covering features like age, sex, chest pain type, blood pressure, among others. The target column is the target variable, where 1 = heart disease and 0 = no heart disease. For a full breakdown, you can view the kaggle description of the dataset.</p>
+                    
+                    <h4>Starter Notebook (not required to use):</h4>
+                    <p><a href="https://colab.research.google.com/drive/1oYpGxTEJN3fo4RInWTGrQIvfUrXqW67I?usp=sharing" target="_blank" rel="noopener noreferrer">Make a Copy to Use</a></p>
+                    
+                    <h4>Goals/tasks:</h4>
+                    <ul>
+                        <li>Clean dataset (remove unnecessary columns from the dataset to use it for classification)</li>
+                        <li>Train/test split</li>
+                        <li>Set up code for training model (using library of choice)</li>
+                        <li>Train model with hyperparameters</li>
+                        <li>Test model against test data</li>
+                    </ul>
+                    
+                    <h4>Potential Skills:</h4>
+                    <h5>Starter</h5>
+                    <ul>
+                        <li>Logistic Regression</li>
+                        <li>SVM</li>
+                        <li>scikit-learn</li>
+                    </ul>
+                    <h5>Bonus</h5>
+                    <ul>
+                        <li>Decision Tree</li>
+                        <li>Random Forest Classifier</li>
+                        <li>PyTorch</li>
+                        <li>Neural Networks</li>
+                    </ul>
+                    
+                    <h4>Useful Package Documentation:</h4>
+                    <ol>
+                        <li><strong>NumPy</strong> (for numerical computations): <a href="https://numpy.org/doc/" target="_blank" rel="noopener noreferrer">NumPy Documentation</a></li>
+                        <li><strong>pandas</strong> (for data manipulation): <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">pandas Documentation</a></li>
+                        <li><strong>scikit-learn</strong> (for model training and evaluation): <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer">scikit-learn Documentation</a></li>
+                        <li><strong>matplotlib</strong> (for data visualization): <a href="https://matplotlib.org/stable/contents.html" target="_blank" rel="noopener noreferrer">matplotlib Documentation</a></li>
+                        <li><strong>PyTorch</strong> (for deep learning-based models): <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener noreferrer">PyTorch Documentation</a></li>
+                    </ol>
+                `,
+        },
+        // Add more projects here as needed
       ];
 
       const solutionsData = [
         {
-          week: 1,
+          project: 1,
           title: "House Price Prediction Solution",
           content: `
-                    <p>Solutions for Week 1 will be uploaded here after the submission deadline.</p>
+                    <p>Solutions for Project 1 will be uploaded here after the submission deadline.</p>
                 `,
         },
-        // Add more solution weeks here as needed
+        // Add more solution projects here as needed
       ];
 
-      function createWeekElement(weekData) {
-        const weekElement = document.createElement("div");
-        weekElement.className = "week-container";
-        weekElement.innerHTML = `
-                <div class="week-header">
-                    <h2>Week ${weekData.week}: ${weekData.title}</h2>
+      function createProjectElement(projectData) {
+        const projectElement = document.createElement("div");
+        projectElement.className = "project-container";
+        projectElement.innerHTML = `
+                <div class="project-header">
+                    <h2>Project ${projectData.project}: ${projectData.title}</h2>
                     <span class="toggle-icon"></span>
                 </div>
-                <div class="week-content">
-                    ${weekData.content}
+                <div class="project-content">
+                    ${projectData.content}
                 </div>
             `;
-        return weekElement;
+        return projectElement;
       }
 
-      function toggleWeek(weekHeader) {
-        weekHeader.classList.toggle("active");
-        const content = weekHeader.nextElementSibling;
+      function toggleProject(projectHeader) {
+        projectHeader.classList.toggle("active");
+        const content = projectHeader.nextElementSibling;
         content.classList.toggle("active");
       }
 
       function loadContent(data) {
         const contentDiv = document.getElementById("content");
         contentDiv.innerHTML = "";
-        data.forEach((week) => {
-          const weekElement = createWeekElement(week);
-          contentDiv.appendChild(weekElement);
+        data.forEach((project, index) => {
+          const projectElement = createProjectElement(project);
+          contentDiv.appendChild(projectElement);
 
-          const weekHeader = weekElement.querySelector(".week-header");
-          weekHeader.addEventListener("click", () => toggleWeek(weekHeader));
+          const projectHeader = projectElement.querySelector(".project-header");
+          projectHeader.addEventListener("click", () =>
+            toggleProject(projectHeader)
+          );
+
+          // Open the last project by default
+          if (index === data.length - 1) {
+            toggleProject(projectHeader);
+          }
         });
-
-        // Open the first week by default
-        const firstWeekHeader = document.querySelector(".week-header");
-        if (firstWeekHeader) {
-          toggleWeek(firstWeekHeader);
-        }
       }
 
       // Determine which page to load based on the current URL
