@@ -48,14 +48,14 @@
         text-align: center;
         color: var(--dark-blue);
       }
-      .week-container {
+      .project-container {
         border: 1px solid var(--light-blue);
         margin-bottom: 20px;
         border-radius: 5px;
         overflow: hidden;
         background-color: white;
       }
-      .week-header {
+      .project-header {
         background-color: var(--light-blue);
         padding: 10px;
         cursor: pointer;
@@ -64,25 +64,25 @@
         align-items: center;
         transition: background-color 0.3s ease;
       }
-      .week-header:hover {
+      .project-header:hover {
         background-color: #6a9fd4;
       }
-      .week-header h2 {
+      .project-header h2 {
         margin: 0;
         color: var(--dark-blue);
       }
-      .week-content {
+      .project-content {
         display: none;
         padding: 20px;
       }
-      .week-content.active {
+      .project-content.active {
         display: block;
       }
       .toggle-icon::after {
         content: "\25BC";
         color: var(--dark-blue);
       }
-      .week-header.active .toggle-icon::after {
+      .project-header.active .toggle-icon::after {
         content: "\25B2";
       }
       a {
@@ -115,15 +115,15 @@
 
     <script>
       const problemsData = [
-        // Add more weeks here as needed
+        // Add more projects here as needed
       ];
 
       const solutionsData = [
         {
-          week: 1,
+          project: 1,
           title: "House Price Prediction Solution",
           content: `
-                    <h1>Week 1 Solutions</h1>
+                    <h1>Project 1 Solutions</h1>
                    
                     <h2>Summary</h2>
                     <h4>Baseline Models:</h4>
@@ -153,45 +153,45 @@
 
                 `,
         },
-        // Add more solution weeks here as needed
+        // Add more solution projects here as needed
       ];
 
-      function createWeekElement(weekData) {
-        const weekElement = document.createElement("div");
-        weekElement.className = "week-container";
-        weekElement.innerHTML = `
-                <div class="week-header">
-                    <h2>Week ${weekData.week}: ${weekData.title}</h2>
+      function createProjectElement(projectData) {
+        const projectElement = document.createElement("div");
+        projectElement.className = "project-container";
+        projectElement.innerHTML = `
+                <div class="project-header">
+                    <h2>Project ${projectData.project}: ${projectData.title}</h2>
                     <span class="toggle-icon"></span>
                 </div>
-                <div class="week-content">
-                    ${weekData.content}
+                <div class="project-content">
+                    ${projectData.content}
                 </div>
             `;
-        return weekElement;
+        return projectElement;
       }
 
-      function toggleWeek(weekHeader) {
-        weekHeader.classList.toggle("active");
-        const content = weekHeader.nextElementSibling;
+      function toggleProject(projectHeader) {
+        projectHeader.classList.toggle("active");
+        const content = projectHeader.nextElementSibling;
         content.classList.toggle("active");
       }
 
       function loadContent(data) {
         const contentDiv = document.getElementById("content");
         contentDiv.innerHTML = "";
-        data.forEach((week) => {
-          const weekElement = createWeekElement(week);
-          contentDiv.appendChild(weekElement);
+        data.forEach((project) => {
+          const projectElement = createProjectElement(project);
+          contentDiv.appendChild(projectElement);
 
-          const weekHeader = weekElement.querySelector(".week-header");
-          weekHeader.addEventListener("click", () => toggleWeek(weekHeader));
+          const projectHeader = projectElement.querySelector(".project-header");
+          projectHeader.addEventListener("click", () => toggleProject(projectHeader));
         });
 
-        // Open the first week by default
-        const firstWeekHeader = document.querySelector(".week-header");
-        if (firstWeekHeader) {
-          toggleWeek(firstWeekHeader);
+        // Open the first project by default
+        const firstProjectHeader = document.querySelector(".project-header");
+        if (firstProjectHeader) {
+          toggleProject(firstProjectHeader);
         }
       }
 
