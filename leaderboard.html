@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ML-Scope Leaderboard</title>
+    <style>
+      :root {
+        --dark-blue: #1a365d;
+        --light-blue: #7db0e8;
+        --orange: #ff6b35;
+        --podium-max-height: 200px;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-blue);
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      nav {
+        background-color: var(--dark-blue);
+        padding: 10px 0;
+      }
+      nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+      .nav-links a:hover {
+        color: var(--light-blue);
+      }
+      h1 {
+        text-align: center;
+        color: var(--dark-blue);
+      }
+      .podium {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 300px;
+        margin-bottom: 40px;
+      }
+      .podium-item {
+        width: 120px;
+        text-align: center;
+        background-color: var(--light-blue);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 10px;
+        position: relative;
+        margin: 0 5px;
+      }
+      .podium-rank {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--dark-blue);
+      }
+      .podium-name {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      .podium-points {
+        margin-top: 5px;
+      }
+      .medal {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+      }
+      .leaderboard {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .leaderboard-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .leaderboard-rank {
+        font-weight: bold;
+        color: var(--orange);
+        width: 30px;
+      }
+      .leaderboard-name {
+        flex-grow: 1;
+      }
+      .leaderboard-points {
+        font-weight: bold;
+        color: var(--dark-blue);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <a href="index.html">
+          <img src="aida-logo.jpeg" alt="Logo" class="logo" />
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Problems</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="leaderboard.html">Leaderboard</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Leaderboard</h1>
+      <div id="podium" class="podium">
+        <!-- Podium will be populated by JavaScript -->
+      </div>
+      <div id="leaderboard" class="leaderboard">
+        <!-- Leaderboard will be populated by JavaScript -->
+      </div>
+    </div>
+
+    <script>
+      // Sample JSON data (you can replace this with your own data)
+      const leaderboardData = [
+        { name: "", score: 0 },
+        { name: "", score: 0 },
+        { name: "", score: 0 },
+        { name: "", score: 0 },
+        { name: "", score: 0 },
+        { name: "", score: 0 },
+        { name: "", score: 0 },
+        { name: "", score: 0 },
+      ];
+
+      function createPodiumItem(rank, name, score, medal, height) {
+        return `
+          <div class="podium-item" style="height: ${height}px;">
+            <div class="medal">${medal}</div>
+            <div class="podium-rank">${rank}</div>
+            <div class="podium-name">${name}</div>
+            <div class="podium-points">${score} pts</div>
+          </div>
+        `;
+      }
+
+      function createLeaderboardItem(rank, name, score) {
+        return `
+          <div class="leaderboard-item">
+            <span class="leaderboard-rank">${rank}</span>
+            <span class="leaderboard-name">${name}</span>
+            <span class="leaderboard-points">${score} pts</span>
+          </div>
+        `;
+      }
+
+      function updateLeaderboard() {
+        const podium = document.getElementById("podium");
+        const leaderboard = document.getElementById("leaderboard");
+
+        // Sort the leaderboard data by score in descending order
+        leaderboardData.sort((a, b) => b.score - a.score);
+
+        // Create podium
+        const medals = ["🥇", "🥈", "🥉"];
+        let podiumHTML = "";
+        const maxScore = Math.max(
+          ...leaderboardData.slice(0, 3).map((item) => item.score)
+        );
+        const minScore = Math.min(
+          ...leaderboardData.slice(0, 3).map((item) => item.score)
+        );
+        const maxHeight = 200; // Maximum height for the tallest bar
+        const minHeight = 100; // Minimum height for the shortest bar
+
+        for (let i = 0; i < 3 && i < leaderboardData.length; i++) {
+          const rank = ["1st", "2nd", "3rd"][i];
+          const score = leaderboardData[i].score;
+          // Calculate relative height
+          const height =
+            minHeight +
+            ((score - minScore) / (maxScore - minScore)) *
+              (maxHeight - minHeight);
+          podiumHTML += createPodiumItem(
+            rank,
+            leaderboardData[i].name,
+            score,
+            medals[i],
+            height
+          );
+        }
+        podium.innerHTML = podiumHTML;
+
+        // Create leaderboard
+        let leaderboardHTML = "";
+        for (let i = 3; i < leaderboardData.length; i++) {
+          leaderboardHTML += createLeaderboardItem(
+            i + 1,
+            leaderboardData[i].name,
+            leaderboardData[i].score
+          );
+        }
+        leaderboard.innerHTML = leaderboardHTML;
+      }
+
+      // Call the function when the page loads
+      window.onload = updateLeaderboard;
+    </script>
+  </body>
+</html>

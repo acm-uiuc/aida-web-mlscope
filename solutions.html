@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ML-Scope Home</title>
+    <title>ML-Scope Solutions</title>
     <style>
       :root {
         --dark-blue: #1a365d;
@@ -88,27 +88,9 @@
       a {
         color: var(--orange);
         text-decoration: none;
-        text-decoration: underline;
       }
       a:hover {
         text-decoration: underline;
-      }
-
-      .btn {
-        cursor: pointer;
-        background-color: var(--orange);
-        color: var(--dark-blue);
-        font-weight: 700;
-        border: none;
-        width: 200px;
-        height: 50px;
-        padding: 5px;
-        margin: 20px;
-        transition: 0.8s;
-      }
-      .btn:hover {
-        color: var(--orange);
-        background-color: var(--dark-blue);
       }
     </style>
   </head>
@@ -127,62 +109,12 @@
     </nav>
 
     <div class="container">
-      <h1>MLScope</h1>
-      <center>
-        <a target="_blank" href="https://forms.gle/fGnFDcE8JiHc9ZJh8"
-          ><button class="btn">Week 1 Submission</button></a
-        >
-      </center>
+      <h1>Solutions</h1>
       <div id="content"></div>
     </div>
 
     <script>
       const problemsData = [
-        {
-          week: 1,
-          title: "House Price Prediction",
-          content: `
-                    <p>In this task, the goal is to predict house prices in King County using a regression model. Given features like square footage, number of bedrooms, and location, you will utilize models to accurately estimate house prices. This involves data cleaning, model training/utilization, and model performance evaluation.</p>
-                    
-                    <h4>Dataset:</h4>
-                    <p><a href="https://www.kaggle.com/datasets/harlfoxem/housesalesprediction" target="_blank" rel="noopener noreferrer">House Sales Prediction Dataset</a></p>
-                    <p>The dataset contains house sales data from King County, Washington. It has 21,613 rows and 21 columns, covering features like price, sqft_living, bedrooms, bathrooms, waterfront, and zip code, among others. The price column is the target variable, and the other features are used to predict house prices.</p>
-                    
-                    <h4>Starter Notebook (not required to use):</h4>
-                    <p><a href="https://colab.research.google.com/drive/1yhrpIwnvJ7ExjYacx-ixmRcW09JPn2rX?usp=sharing" target="_blank" rel="noopener noreferrer">Make a Copy to Use</a></p>
-                    
-                    <h4>Goals/tasks:</h4>
-                    <ul>
-                        <li>Clean dataset (remove unnecessary columns from the dataset to use it for regression)</li>
-                        <li>Train/test split</li>
-                        <li>Set up code for training model (using library of choice)</li>
-                        <li>Train model with hyperparameters</li>
-                        <li>Test model against test data</li>
-                    </ul>
-                    
-                    <h4>Potential Skills:</h4>
-                    <h5>Starter</h5>
-                    <ul>
-                        <li>Linear Regression</li>
-                        <li>scikit-learn</li>
-                    </ul>
-                    <h5>Bonus</h5>
-                    <ul>
-                        <li>Simple Decision Tree</li>
-                        <li>Random Forest</li>
-                        <li>PyTorch</li>
-                    </ul>
-                    
-                    <h4>Useful Package Documentation:</h4>
-                    <ol>
-                        <li><strong>NumPy</strong> (for numerical computations): <a href="https://numpy.org/doc/" target="_blank" rel="noopener noreferrer">NumPy Documentation</a></li>
-                        <li><strong>pandas</strong> (for data manipulation): <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">pandas Documentation</a></li>
-                        <li><strong>scikit-learn</strong> (for model training and evaluation): <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer">scikit-learn Documentation</a></li>
-                        <li><strong>matplotlib</strong> (for data visualization): <a href="https://matplotlib.org/stable/contents.html" target="_blank" rel="noopener noreferrer">matplotlib Documentation</a></li>
-                        <li><strong>PyTorch</strong> (for deep learning-based models): <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener noreferrer">PyTorch Documentation</a></li>
-                    </ol>
-                `,
-        },
         // Add more weeks here as needed
       ];
 
