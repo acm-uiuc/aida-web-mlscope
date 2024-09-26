@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ML-Scope Resources</title>
+    <style>
+      :root {
+        --dark-blue: #1a365d;
+        --light-blue: #7db0e8;
+        --orange: #ff6b35;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-blue);
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      nav {
+        background-color: var(--dark-blue);
+        padding: 10px 0;
+      }
+      nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+      .nav-links a:hover {
+        color: var(--light-blue);
+      }
+      h1 {
+        text-align: center;
+        color: var(--dark-blue);
+      }
+      .project-container {
+        border: 1px solid var(--light-blue);
+        margin-bottom: 20px;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: white;
+      }
+      .project-header {
+        background-color: var(--light-blue);
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+      }
+      .project-header:hover {
+        background-color: #6a9fd4;
+      }
+      .project-header h2 {
+        margin: 0;
+        color: var(--dark-blue);
+      }
+      .project-content {
+        display: none;
+        padding: 20px;
+      }
+      .project-content.active {
+        display: block;
+      }
+      .toggle-icon::after {
+        content: "\25BC";
+        color: var(--dark-blue);
+      }
+      .project-header.active .toggle-icon::after {
+        content: "\25B2";
+      }
+      a {
+        color: var(--orange);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .resource-item {
+        margin-bottom: 20px;
+      }
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .article-preview {
+        display: flex;
+        border: 1px solid var(--light-blue);
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 10px;
+      }
+      .article-preview img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+      }
+      .article-preview-content {
+        padding: 10px;
+        flex: 1;
+      }
+      .article-preview-content h4 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <a href="index.html">
+          <img src="aida-logo.jpeg" alt="Logo" class="logo" />
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Problems</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="leaderboard.html">Leaderboard</a>
+          <a href="resources.html">Resources</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>MLScope Resources</h1>
+      <div id="content"></div>
+    </div>
+
+    <script>
+      const resourcesData = [
+        {
+          project: 1,
+          title: "House Price Prediction Resources",
+          content: `
+            <!-- ... (Project 1 content remains the same) ... -->
+          `,
+        },
+        {
+          project: 2,
+          title: "Heart Disease Classifier Resources",
+          content: `
+            <div class="resource-section">
+              <h3>Starter Resources</h3>
+              
+              <div class="resource-item">
+                <h4>1. What is logistic regression?</h4>
+                <div class="video-grid">
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/yIYKR4sgzI8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/EKm0spFxFG4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                <br>
+                </div>
+              </div>
+              
+              <div class="resource-item">
+                <h4>2. How do I implement logistic regression?</h4>
+                <div class="video-grid">
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zM4VZR0px8E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HYcXgN9HaTM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                </div>
+                <p>Official documentation: <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" target="_blank">Scikit-learn Logistic Regression</a></p>
+              </div>
+              
+              <div class="resource-item">
+                <h4>3. What is a support vector machine (SVM)?</h4>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/efR1C6CvhmE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <br>
+              </div>
+              
+              <div class="resource-item">
+                <h4>4. How do I implement a support vector machine (SVM)?</h4>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/7sz4WpkUIIs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <br>
+                <p>Official documentation: <a href="https://scikit-learn.org/stable/modules/svm.html" target="_blank">Scikit-learn SVM</a></p>
+              </div>
+            </div>
+
+            <div class="resource-section">
+              <h3>Bonus Resources</h3>
+              
+              <div class="resource-item">
+                <h4>1. What is a decision tree?</h4>
+                <div class="video-grid">
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_L39rN6gz7Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZVR2Way4nwQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                </div>
+              </div>
+              
+              <div class="resource-item">
+                <h4>2. How to implement a decision tree?</h4>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/LDRbO9a6XPU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <br>
+              </div>
+              
+              <div class="resource-item">
+                <h4>3. How to use PyTorch?</h4>
+                <p>Official tutorial: <a href="https://pytorch.org/tutorials/beginner/basics/intro.html" target="_blank">PyTorch Basics Tutorial</a></p>
+              </div>
+              
+              <div class="resource-item">
+                <h4>4. How do I build a neural network with PyTorch?</h4>
+                <p>Official tutorial: <a href="https://pytorch.org/tutorials/beginner/basics/buildmodel_tutorial.html" target="_blank">Build Model Tutorial</a></p>
+              </div>
+            </div>
+          `,
+        },
+      ];
+
+      function createProjectElement(projectData) {
+        const projectElement = document.createElement("div");
+        projectElement.className = "project-container";
+        projectElement.innerHTML = `
+          <div class="project-header">
+            <h2>Project ${projectData.project}: ${projectData.title}</h2>
+            <span class="toggle-icon"></span>
+          </div>
+          <div class="project-content">
+            ${projectData.content}
+          </div>
+        `;
+        return projectElement;
+      }
+
+      function toggleProject(projectHeader) {
+        projectHeader.classList.toggle("active");
+        const content = projectHeader.nextElementSibling;
+        content.classList.toggle("active");
+      }
+
+      function loadContent(data) {
+        const contentDiv = document.getElementById("content");
+        contentDiv.innerHTML = "";
+        data.forEach((project, index) => {
+          const projectElement = createProjectElement(project);
+          contentDiv.appendChild(projectElement);
+
+          const projectHeader = projectElement.querySelector(".project-header");
+          projectHeader.addEventListener("click", () =>
+            toggleProject(projectHeader)
+          );
+
+          // Open the first project by default
+          if (index === data.length - 1) {
+            toggleProject(projectHeader);
+          }
+        });
+      }
+
+      loadContent(resourcesData);
+    </script>
+  </body>
+</html>
