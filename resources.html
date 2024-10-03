@@ -156,7 +156,99 @@
           project: 1,
           title: "House Price Prediction Resources",
           content: `
-            <!-- ... (Project 1 content remains the same) ... -->
+            <div class="resource-section">
+              <h3>Starter Resources</h3>
+              
+              <div class="resource-item">
+                <h4>1. How do I clean my dataset?</h4>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/OS2m0f2gVJ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+              </div>
+              
+              <div class="resource-item">
+                <h4>2. How to train/test split?</h4>
+                <div class="video-grid">
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SjOfbbfI2qY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fwY9Qv96DJY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="resource-item">
+                <h4>3. What are hyperparameters?</h4>
+                <p>Article: <a href="https://machinelearningmastery.com/difference-between-a-parameter-and-a-hyperparameter/" target="_blank">Difference Between a Parameter and a Hyperparameter</a></p>
+              </div>
+              
+              <div class="resource-item">
+                <h4>4. How to train with hyperparameters?</h4>
+                <p>Article: <a href="https://aws.amazon.com/what-is/hyperparameter-tuning/#:~:text=When%20you're%20training%20machine,This%20is%20called%20hyperparameter%20tuning." target="_blank">What is Hyperparameter Tuning?</a></p>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/jUxhUgkKAjE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+              </div>
+              
+              <div class="resource-item">
+                <h4>5. What is linear regression? How do I implement it?</h4>
+                <div class="video-grid">
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/R15LjD8aCzc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/b0L47BeklTE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zPG4NjIkCjc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qxo8p8PtFeA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="resource-section">
+              <h3>Bonus Resources</h3>
+              
+              <div class="resource-item">
+                <h4>1. What is a simple decision tree?</h4>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/TWeK0TuxhbY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+              </div>
+              
+              <div class="resource-item">
+                <h4>2. How to implement a simple decision tree?</h4>
+                <p>Article: <a href="https://www.geeksforgeeks.org/decision-tree-implementation-python/" target="_blank">Decision Tree Implementation in Python</a></p>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/YkYpGhsCx4c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+              </div>
+              
+              <div class="resource-item">
+                <h4>3. How to implement a random forest algorithm?</h4>
+                <div class="video-grid">
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/v6VJ2RO66Ag" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kFwe2ZZU7yw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_QuGM_FW9eo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
           `,
         },
         {
@@ -286,7 +378,7 @@
           );
 
           // Open the first project by default
-          if (index === data.length - 1) {
+          if (index === 0) {
             toggleProject(projectHeader);
           }
         });
