@@ -154,7 +154,37 @@
 
                 `,
         },
-        // Add more solution projects here as needed
+
+        {
+          project: 2,
+          title: "Heart Disease Classification Solution",
+          content: `
+        <h1>Project 2 Solutions</h1>
+        
+        <h2>Summary</h2>
+        <h4>Baseline Models:</h4>
+        <ul>
+            <li>Stochastic Gradient Descent Classifier (with log loss) yielded an accuracy of 0.72, providing a reasonable starting point but not highly reliable for medical predictions.</li>
+            <li>Random Forest Classifier achieved a much higher accuracy of 0.98, making it significantly better for classifying heart disease compared to SGD.</li>
+        </ul>
+
+        <h4>Highest-Performing Solutions:</h4>
+        <ul>
+            <li>Random Forest Classifier (with 100 estimators) was the top-performing model, reaching an accuracy of 0.98, indicating that ensemble methods are highly effective for this task.</li>
+        </ul>
+
+        <h4>Takeaways:</h4>
+        <ul>
+            <li>Random Forest outperformed linear classifiers, suggesting that decision tree-based models handle complex medical data better.</li>
+            <li>Increasing the number of trees in the forest can lead to more robust predictions, particularly when dealing with health-related datasets.</li>
+            <li>Future improvements could include exploring hyperparameter tuning and other advanced ensemble methods.</li>
+        </ul>
+        
+        <a target="_blank" href="https://colab.research.google.com/drive/1TfhmyyxZ1njcXTghnxJuNAkaBVo-lWFW?usp=sharing">Link to Notebook</a>
+        <br>
+        <a target="_blank" href="https://docs.google.com/presentation/d/1ruvhrehQhAcr20RiEG_G6QNCvhQivFFeYbJUNscfafg/edit?usp=sharing">Link to Slides</a>
+    `,
+        },
       ];
 
       function createProjectElement(projectData) {
@@ -181,19 +211,20 @@
       function loadContent(data) {
         const contentDiv = document.getElementById("content");
         contentDiv.innerHTML = "";
-        data.forEach((project) => {
+        data.forEach((project, index) => {
           const projectElement = createProjectElement(project);
           contentDiv.appendChild(projectElement);
 
           const projectHeader = projectElement.querySelector(".project-header");
-          projectHeader.addEventListener("click", () => toggleProject(projectHeader));
-        });
+          projectHeader.addEventListener("click", () =>
+            toggleProject(projectHeader)
+          );
 
-        // Open the first project by default
-        const firstProjectHeader = document.querySelector(".project-header");
-        if (firstProjectHeader) {
-          toggleProject(firstProjectHeader);
-        }
+          // Open the last project by default
+          if (index === data.length - 1) {
+            toggleProject(projectHeader);
+          }
+        });
       }
 
       // Determine which page to load based on the current URL
