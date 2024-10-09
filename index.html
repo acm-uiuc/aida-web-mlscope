@@ -131,8 +131,8 @@
     <div class="container">
       <h1>MLScope</h1>
       <center>
-        <a target="_blank" href="https://forms.gle/1DKpSa5KUvAJi9RF8"
-          ><button class="btn">Project 2 Submission</button></a
+        <a target="_blank" href="https://forms.gle/pBdjSJU4bYmD7KF26"
+          ><button class="btn">Project 3 Submission</button></a
         >
       </center>
       <div id="content"></div>
@@ -229,6 +229,51 @@
                         <li><strong>scikit-learn</strong> (for model training and evaluation): <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer">scikit-learn Documentation</a></li>
                         <li><strong>matplotlib</strong> (for data visualization): <a href="https://matplotlib.org/stable/contents.html" target="_blank" rel="noopener noreferrer">matplotlib Documentation</a></li>
                         <li><strong>PyTorch</strong> (for deep learning-based models): <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener noreferrer">PyTorch Documentation</a></li>
+                    </ol>
+                `,
+        },
+        {
+          project: 3,
+          title: "Benchmarking LLMs Against a Baseline Dataset",
+          content: `
+                    <p>This project explores the crucial task of benchmarking Large Language Models (LLMs) against a baseline dataset. The goal is to evaluate LLM performance and analyze the impact of design choices and parameter tuning on model accuracy. By systematically comparing LLMs to a baseline, participants can gain insights into their strengths, weaknesses, and overall capabilities, aiding in selecting the most suitable LLM for specific applications.</p>
+
+                    <h4>Dataset:</h4>
+                    <p><a href="https://huggingface.co/datasets/gsm8k" target="_blank" rel="noopener noreferrer">GSM8K Dataset</a></p>
+                    <p>The GSM8K dataset consists of 8,000 high-quality grade school math problems specifically designed to test LLM reasoning capabilities. The "main" version of the dataset is divided into train and test splits, with the test split containing 1,319 problems. Each problem contains a question and an answer in text format, and the challenge is to produce the correct numerical answer. The test split will be used for evaluating LLM performance.</p>
+
+                    <h4>Starter Notebook:</h4>
+                    <p><a href="https://colab.research.google.com/drive/1xWtiFpSRIUGO1a_24T1e_PtDQCEf-haF?usp=sharing" target="_blank" rel="noopener noreferrer">Make a Copy to Use</a></p>
+                    
+                    <h4>Goals/tasks:</h4>
+                    <ul>
+                        <li>Set up API calls to interact with a given LLM model (LLaMa-3-8B)</li>
+                        <li>Explore different prompt engineering techniques</li>
+                        <li>Adjust model parameters and settings to optimize performance</li>
+                        <li>Evaluate the model against the test dataset</li>
+                        <li>Calculate the final accuracy and compare against the baseline</li>
+                    </ul>
+                    
+                    <h4>Potential Skills:</h4>
+                    <h5>Starter</h5>
+                    <ul>
+                        <li>Prompt Engineering</li>
+                        <li>API Integration</li>
+                        <li>Text Normalization and Cleaning</li>
+                    </ul>
+                    <h5>Bonus</h5>
+                    <ul>
+                        <li>Advanced Parameter Tuning</li>
+                        <li>Exploring Different LLM Architectures</li>
+                        <li>Evaluation and Analysis Techniques</li>
+                    </ul>
+                    
+                    <h4>Useful Package Documentation:</h4>
+                    <ol>
+                        <li><strong>transformers</strong> (for LLM model interactions): <a href="https://huggingface.co/docs/transformers/index" target="_blank" rel="noopener noreferrer">Transformers Documentation</a></li>
+                        <li><strong>datasets</strong> (for dataset loading and management): <a href="https://huggingface.co/docs/datasets/index" target="_blank" rel="noopener noreferrer">Datasets Documentation</a></li>
+                        <li><strong>Replicate</strong> (for model hosting and API calls): <a href="https://replicate.com/docs/reference/http" target="_blank" rel="noopener noreferrer">Replicate Documentation</a></li>
+                        <li><strong>re</strong> (for text processing): <a href="https://docs.python.org/3/library/re.html" target="_blank" rel="noopener noreferrer">Python re Documentation</a></li>
                     </ol>
                 `,
         },

@@ -340,6 +340,177 @@
                 <p>Official tutorial: <a href="https://pytorch.org/tutorials/beginner/basics/buildmodel_tutorial.html" target="_blank">Build Model Tutorial</a></p>
               </div>
             </div>
+        <div class="resource-item">
+                <h4>5. What is a loss function?</h4>
+                <p>A loss function is like a guide that helps a machine learning model learn. It measures how far off the model's predictions are from the actual answers. Imagine trying to hit a target with a dart—each time you miss, the loss function tells you how far you are from the bullseye. The goal is to adjust your aim (the model's parameters) to minimize the "miss" or error, so the model gets better at predicting the correct answers over time.</p>
+                <div class="video-grid">
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IVVVjBSk9N0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                  <br>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QBbC3Cjsnjg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="resource-item">
+                <h4>6. How do I implement a loss function?</h4>
+                <p>Here's a general approach to implementing a loss function:</p>
+                <ol>
+                  <li>Define the loss function (e.g., Mean Squared Error)</li>
+                  <li>Input: predicted values (y_pred), actual values (y_true)</li>
+                  <li>Initialize loss to 0</li>
+                  <li>For each pair of predicted and actual values:
+                    <ol>
+                      <li>Calculate the difference (error) between predicted and actual values</li>
+                      <li>Square the error</li>
+                      <li>Add the squared error to the total loss</li>
+                    </ol>
+                  </li>
+                  <li>Average the total loss by dividing it by the number of data points</li>
+                  <li>Output the average loss</li>
+                </ol>
+                <p>Here's an example implementation of the Mean Squared Error (MSE) loss function in Python:</p>
+                <pre><code class="language-python">
+def mean_squared_error(y_pred, y_true):
+    """
+    Function to compute the mean squared error between
+    predicted and actual values.
+    """
+    # Ensure inputs are arrays of the same size
+    n = len(y_pred)  # number of data points
+    loss = 0.0
+    
+    # Calculate the squared error for each pair of values
+    for i in range(n):
+        error = y_pred[i] - y_true[i]
+        loss += error**2
+    
+    # Calculate the average loss
+    loss = loss / n
+    return loss
+                </code></pre>
+                <p>This implementation follows the steps outlined above and provides a concrete example of how to create a loss function in Python.</p>
+                <p>For more detailed information on implementing loss functions, check out these resources:</p>
+                <ul>
+                  <li><a href="https://neptune.ai/blog/keras-loss-functions#:~:text=A%20custom%20loss%20function%20can,passed%20at%20the%20compile%20stage" target="_blank">Keras Loss Functions: Everything You Need to Know</a></li>
+                  <li><a href="https://cnvrg.io/keras-custom-loss-functions/" target="_blank">How To Build Custom Loss Functions In Keras For Any Use Case</a></li>
+                </ul>
+              </div>
+            </div>
+
+            
+          `,
+        },
+        {
+          project: 3,
+          title: "LLaMa-3-8B and LLM Optimization Resources",
+          content: `
+            <div class="resource-section">
+              <h3>Starter Resources</h3>
+              
+              <div class="resource-item">
+                <h4>1. What is LLaMa-3-8B?</h4>
+                <p>LLaMa-3-8B is a version of Meta's LLaMa (Large Language Model Meta AI) series, specifically with 8 billion parameters. Parameters are like the "knowledge" a model learns during training. The higher the number of parameters, the more complex patterns the model can understand and generate.</p>
+                <h5>Why are we using this model?</h5>
+                <ul>
+                  <li><strong>Pre-trained:</strong> Already trained on a lot of data, so you don't have to train it from scratch.</li>
+                  <li><strong>Good Size:</strong> With 8 billion parameters, it can handle tasks well without needing huge amounts of computing power.</li>
+                  <li><strong>Efficient:</strong> Designed to run efficiently on less powerful machines.</li>
+                  <li><strong>Versatile:</strong> Can be used for many tasks like text generation, classification, or answering questions.</li>
+                  <li><strong>Easy to Use:</strong> Lots of support and documentation available.</li>
+                  <li><strong>Works with Small Data:</strong> Can achieve solid performance even with a small dataset.</li>
+                </ul>
+                <p>For more information:</p>
+                <ul>
+                  <li><a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B" target="_blank">LLaMa-3-8B Documentation on Hugging Face</a></li>
+                  <li>
+                    <div class="video-container">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/8Ul_0jddTU4?si=K62dJyqxmWn0M-qI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="resource-item">
+                <h4>2. How do I benchmark against a baseline dataset?</h4>
+                <p>Benchmarking against a baseline dataset means comparing a machine learning model's performance to a standard or reference model that has already been tested on the same dataset. It's like testing a new car's speed by racing it against a car with known performance. This helps you understand if the new model is actually better or worse compared to the existing standard.</p>
+                <p>For more information:</p>
+                <ul>
+                  <li><a href="https://mlsysbook.ai/contents/benchmarking/benchmarking.html" target="_blank">Benchmarking in Machine Learning Systems</a></li>
+                </ul>
+              </div>
+              
+              <div class="resource-item">
+                <h4>3. How do I evaluate LLM Performance?</h4>
+                <p>To evaluate LLM performance, you measure how well the model completes specific tasks using various metrics. Some common metrics include:</p>
+                <ul>
+                  <li>Accuracy: How often the model gets things right</li>
+                  <li>Perplexity: How confident the model is in its predictions</li>
+                  <li>BLEU score: How closely generated text matches a reference</li>
+                </ul>
+                <p>You should also consider the model's speed, resource usage, and how well it generalizes to new data.</p>
+                <p>For more information:</p>
+                <ul>
+                  <li><a href="https://en.wikipedia.org/wiki/Perplexity" target="_blank">Perplexity in Natural Language Processing</a></li>
+                  <li><a href="https://www.digitalocean.com/community/tutorials/bleu-score-in-python" target="_blank">Understanding BLEU Score</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="resource-section">
+              <h3>Advanced Resources</h3>
+              
+              <div class="resource-item">
+                <h4>1. How does model type affect accuracy and effectiveness?</h4>
+                <p>Different model architectures and designs can significantly impact a model's accuracy and effectiveness. Experimenting with various configurations allows you to observe how changes in layers, neurons, activation functions, or optimizers affect performance. By comparing results, you can determine which architecture best suits your specific task.</p>
+                <h5>How do I choose the right model?</h5>
+                <p>Choosing the right model depends on your problem, data, and goals. Consider factors like task type (classification, regression, etc.), data size and type, and computational resources. Start with simpler models and progress to more complex ones if needed.</p>
+                <p>For more information:</p>
+                <ul>
+                  <li>
+                    <div class="video-container">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/UiF0FyMFO-8?si=RBtN1KaJheX-xSgO" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="resource-item">
+                <h4>2. How do I parameter tune? How do I know what to tune?</h4>
+                <p>Parameter tuning involves adjusting the hyperparameters of your model to improve its performance. Key areas to focus on include:</p>
+                <ul>
+                  <li>Learning rate</li>
+                  <li>Batch size</li>
+                  <li>Number of training epochs</li>
+                  <li>Regularization techniques</li>
+                  <li>Optimizer type</li>
+                  <li>Dropout rate</li>
+                </ul>
+                <p>Use techniques like grid search or random search to explore different combinations of these hyperparameters.</p>
+                <p>For more information:</p>
+                <ul>
+                  <li><a href="https://www.analyticsvidhya.com/blog/2022/02/a-comprehensive-guide-on-hyperparameter-tuning-and-its-techniques/" target="_blank">A Comprehensive Guide on Hyperparameter Tuning and its Techniques</a></li>
+                </ul>
+              </div>
+              
+              <div class="resource-item">
+                <h4>3. What does model optimization mean?</h4>
+                <p>Model optimization involves going beyond pre-built tools to actively fine-tune and adjust various aspects of a model for optimal performance. This includes:</p>
+                <ul>
+                  <li>Fine-tuning hyperparameters</li>
+                  <li>Adjusting model architecture</li>
+                  <li>Implementing advanced training techniques</li>
+                  <li>Using regularization methods</li>
+                </ul>
+                <p>The goal is to achieve the highest possible accuracy or efficiency through hands-on adjustments.</p>
+                <p>For more information:</p>
+                <ul>
+                  <li><a href="https://dev.to/mage_ai/10-steps-to-build-and-optimize-a-ml-model-4a3h" target="_blank">10 steps to build and optimize a ML model</a></li>
+                </ul>
+              </div>
+            </div>
           `,
         },
       ];
