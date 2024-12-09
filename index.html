@@ -131,8 +131,8 @@
     <div class="container">
       <h1>MLScope</h1>
       <center>
-        <a target="_blank" href="https://forms.gle/pBdjSJU4bYmD7KF26"
-          ><button class="btn">Project 3 Submission</button></a
+        <a target="_blank" href="https://forms.gle/zCq6EVG8kUSFHfxP8"
+          ><button class="btn">Project 4 Submission</button></a
         >
       </center>
       <div id="content"></div>
@@ -145,14 +145,14 @@
           title: "House Price Prediction",
           content: `
                     <p>In this task, the goal is to predict house prices in King County using a regression model. Given features like square footage, number of bedrooms, and location, you will utilize models to accurately estimate house prices. This involves data cleaning, model training/utilization, and model performance evaluation.</p>
-                    
+
                     <h4>Dataset:</h4>
                     <p><a href="https://www.kaggle.com/datasets/harlfoxem/housesalesprediction" target="_blank" rel="noopener noreferrer">House Sales Prediction Dataset</a></p>
                     <p>The dataset contains house sales data from King County, Washington. It has 21,613 rows and 21 columns, covering features like price, sqft_living, bedrooms, bathrooms, waterfront, and zip code, among others. The price column is the target variable, and the other features are used to predict house prices.</p>
-                    
+
                     <h4>Starter Notebook (not required to use):</h4>
                     <p><a href="https://colab.research.google.com/drive/1yhrpIwnvJ7ExjYacx-ixmRcW09JPn2rX?usp=sharing" target="_blank" rel="noopener noreferrer">Make a Copy to Use:</a></p>
-                    
+
                     <h4>Goals/tasks:</h4>
                     <ul>
                         <li>Clean dataset (remove unnecessary columns from the dataset to use it for regression)</li>
@@ -161,7 +161,7 @@
                         <li>Train model with hyperparameters</li>
                         <li>Test model against test data</li>
                     </ul>
-                    
+
                     <h4>Potential Skills:</h4>
                     <h5>Starter</h5>
                     <ul>
@@ -174,7 +174,7 @@
                         <li>Random Forest</li>
                         <li>PyTorch</li>
                     </ul>
-                    
+
                     <h4>Useful Package Documentation:</h4>
                     <ol>
                         <li><strong>NumPy</strong> (for numerical computations): <a href="https://numpy.org/doc/" target="_blank" rel="noopener noreferrer">NumPy Documentation</a></li>
@@ -190,14 +190,14 @@
           title: "Heart Disease Classifier",
           content: `
                     <p>In this task, the goal is to classify whether a given patient has heart disease using a classifier model. Given features like age, sex, chest pain type, blood pressure, etc. you will utilize models to accurately predict whether or not a patient has heart disease. This involves data cleaning, model training/utilization, and model performance evaluation.</p>
-                    
+
                     <h4>Dataset:</h4>
                     <p><a href="https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset" target="_blank" rel="noopener noreferrer">Heart Disease Classifier Dataset</a></p>
                     <p>The dataset contains heart data attributes from four medical databases (Cleveland, Hungary, Switzerland, Long Beach). It has 1026 rows and 15 columns, covering features like age, sex, chest pain type, blood pressure, among others. The target column is the target variable, where 1 = heart disease and 0 = no heart disease. For a full breakdown, you can view the kaggle description of the dataset.</p>
-                    
+
                     <h4>Starter Notebook (not required to use):</h4>
                     <p><a href="https://colab.research.google.com/drive/1oYpGxTEJN3fo4RInWTGrQIvfUrXqW67I?usp=sharing" target="_blank" rel="noopener noreferrer">Make a Copy to Use</a></p>
-                    
+
                     <h4>Goals/tasks:</h4>
                     <ul>
                         <li>Clean dataset (remove unnecessary columns from the dataset to use it for classification)</li>
@@ -206,7 +206,7 @@
                         <li>Train model with hyperparameters</li>
                         <li>Test model against test data</li>
                     </ul>
-                    
+
                     <h4>Potential Skills:</h4>
                     <h5>Starter</h5>
                     <ul>
@@ -221,7 +221,7 @@
                         <li>PyTorch</li>
                         <li>Neural Networks</li>
                     </ul>
-                    
+
                     <h4>Useful Package Documentation:</h4>
                     <ol>
                         <li><strong>NumPy</strong> (for numerical computations): <a href="https://numpy.org/doc/" target="_blank" rel="noopener noreferrer">NumPy Documentation</a></li>
@@ -244,7 +244,7 @@
 
                     <h4>Starter Notebook:</h4>
                     <p><a href="https://colab.research.google.com/drive/1xWtiFpSRIUGO1a_24T1e_PtDQCEf-haF?usp=sharing" target="_blank" rel="noopener noreferrer">Make a Copy to Use</a></p>
-                    
+
                     <h4>Goals/tasks:</h4>
                     <ul>
                         <li>Set up API calls to interact with a given LLM model (LLaMa-3-8B)</li>
@@ -253,7 +253,7 @@
                         <li>Evaluate the model against the test dataset</li>
                         <li>Calculate the final accuracy and compare against the baseline</li>
                     </ul>
-                    
+
                     <h4>Potential Skills:</h4>
                     <h5>Starter</h5>
                     <ul>
@@ -267,7 +267,7 @@
                         <li>Exploring Different LLM Architectures</li>
                         <li>Evaluation and Analysis Techniques</li>
                     </ul>
-                    
+
                     <h4>Useful Package Documentation:</h4>
                     <ol>
                         <li><strong>transformers</strong> (for LLM model interactions): <a href="https://huggingface.co/docs/transformers/index" target="_blank" rel="noopener noreferrer">Transformers Documentation</a></li>
@@ -277,7 +277,81 @@
                     </ol>
                 `,
         },
-        // Add more projects here as needed
+        {
+          project: 4,
+          title: "MNIST Digit Classification",
+          content: `
+            <p>In this challenge, you'll work with the classic MNIST dataset to create a digit classification model. Beyond basic classification, you can tackle additional advanced challenges to enhance your model's capabilities and earn bonus points.</p>
+
+            <h4>Dataset:</h4>
+            <p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/datasets/mnist/load_data" target="_blank" rel="noopener noreferrer">MNIST Dataset</a> (no need to specifiy 'path' parameter)</p>
+            <p>The MNIST database contains 60,000 training images and 10,000 testing images of handwritten digits. Each image is a 28x28 grayscale image of a single digit (0-9). This is a great dataset for learning the basics of neural networks and image classification.</p>
+
+            <h4>Starter Notebook (not required to use):</h4>
+            <p><a href="https://colab.research.google.com/drive/1zm01NpRwq4j2tQuqCDW70sUFzp5r6XKW?usp=sharing" target="_blank" rel="noopener noreferrer">Make a Copy to Use</a></p>
+
+            <h4>Basic Goals/tasks:</h4>
+            <ul>
+                <li>Load and preprocess the MNIST dataset</li>
+                <li>Design and implement a neural network architecture</li>
+                <li>Train the model with appropriate hyperparameters</li>
+                <li>Evaluate model performance on the test set</li>
+                <li>Visualize results and confusion matrix</li>
+            </ul>
+
+            <h4>[Optional]: Bonus Challenges (Choose any or do your own):</h4>
+            <h5>1. Confidence Scoring and Uncertainty</h5>
+            <ul>
+                <li>Implement confidence scoring for predictions</li>
+                <li>Visualize prediction uncertainty</li>
+                <li>Analyze cases with low confidence scores</li>
+            </ul>
+
+            <h5>2. Sequential Digits Recognition</h5>
+            <ul>
+                <li>Create synthetic sequences from MNIST digits (for example: 123 or 38183)</li>
+                <li>Implement RNN/LSTM architecture for sequence recognition</li>
+                <li>Train and evaluate on multi-digit sequences</li>
+            </ul>
+
+            <h5>3. Image-to-Equation Conversion</h5>
+            <ul>
+                <li>Generate simple mathematical equations using MNIST digits</li>
+                <li>Develop a pipeline to recognize and parse equations</li>
+                <li>Implement equation solving functionality</li>
+            </ul>
+
+            <h5>4. Stylized MNIST Digits</h5>
+            <ul>
+                <li>Apply various transformations to MNIST digits (rotations, noise addition, etc.)</li>
+                <li>Train model on augmented dataset</li>
+                <li>Evaluate robustness to different styles and transformations</li>
+            </ul>
+
+            <h4>Potential Skills:</h4>
+            <h5>Starter</h5>
+            <ul>
+                <li>Convolutional Neural Networks (CNNs)</li>
+                <li>PyTorch or TensorFlow</li>
+                <li>Basic Image Processing</li>
+            </ul>
+            <h5>Bonus</h5>
+            <ul>
+                <li>RNNs/LSTMs</li>
+                <li>Data Augmentation</li>
+                <li>Uncertainty Estimation</li>
+                <li>Advanced Architecture Design</li>
+            </ul>
+
+            <h4>Useful Package Documentation:</h4>
+            <ol>
+                <li><strong>PyTorch</strong>: <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener noreferrer">PyTorch Documentation</a></li>
+                <li><strong>TensorFlow</strong>: <a href="https://www.tensorflow.org/api_docs" target="_blank" rel="noopener noreferrer">TensorFlow Documentation</a></li>
+                <li><strong>OpenCV</strong>: <a href="https://docs.opencv.org/4.x/" target="_blank" rel="noopener noreferrer">OpenCV Documentation</a></li>
+                <li><strong>scikit-learn</strong>: <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer">scikit-learn Documentation</a></li>
+            </ol>
+          `,
+        },
       ];
 
       const solutionsData = [
