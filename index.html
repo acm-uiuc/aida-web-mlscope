@@ -188,7 +188,7 @@
       </center> -->
       <div id="content"></div>
     </div>
-    <center>
+    <!-- <center>
       <div class="card">
         <img src="aida-logo.jpeg" alt="Image" class="card-img" />
         <div class="card-content">
@@ -202,7 +202,7 @@
           >
         </div>
       </div>
-    </center>
+    </center> -->
     <script>
       // const problemsData = [
       //   {
@@ -418,7 +418,102 @@
       //     `,
       //   },
       // ];
-      const problemsData = [];
+      const problemsData = [
+        {
+          project: 1,
+          title: "Multi-City Housing Market Analysis & Prediction",
+          content: `
+        <p>In this comprehensive project, you'll analyze and predict housing prices across multiple major US metropolitan areas using advanced regression techniques. The goal is to not only predict prices but also understand market trends, identify key value drivers, and develop insights for real estate investment decisions.</p>
+
+        <h4>Datasets:</h4>
+        <p><strong>Primary Dataset:</strong> <a href="https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset" target="_blank" rel="noopener noreferrer">California Housing Dataset</a></p>
+        <p>Contains housing data from California districts with features including median income, housing median age, average rooms, population, etc.</p>
+        
+        <p><strong>Supplementary Datasets (optional):</strong></p>
+        <ul>
+            <li><a href="https://www.zillow.com/research/data/" target="_blank" rel="noopener noreferrer">Zillow Research Data</a></li>
+            <li><a href="https://www.census.gov/housing/hvs/data/index.html" target="_blank" rel="noopener noreferrer">US Census Housing Data</a></li>
+        </ul>
+
+        <h4>Project Components (% of points):</h4>
+        <h5>1. Data Preparation & Analysis (25%)</h5>
+        <ul>
+            <li>Clean and preprocess multiple datasets</li>
+            <li>Handle missing values and outliers</li>
+            <li>Feature engineering:
+                <ul>
+                    <li>Create new features (price per sq ft, age of house categories)</li>
+                    <li>Generate location-based features (distance to amenities)</li>
+                    <li>Develop economic indicators (price-to-rent ratio)</li>
+                </ul>
+            </li>
+            <li>Perform exploratory data analysis with visualizations</li>
+        </ul>
+
+        <h5>2. Model Development (45%)</h5>
+        <ul>
+            <li>Options for implementing models:
+                <ul>
+                    <li>Linear Regression (baseline)</li>
+                    <li>Random Forest</li>
+                    <li>Gradient Boosting (XGBoost/LightGBM)</li>
+                    <li>Neural Network (optional)</li>
+                </ul>
+            </li>
+            <li>Feature selection and importance analysis</li>
+            <li>Cross-validation strategy</li>
+            <li>Hyperparameter optimization</li>
+        </ul>
+
+        <h5>3. Market Analysis/Data Visualization (30%)</h5>
+        <ul>
+            <li>Segment markets by geographic regions</li>
+            <li>Analyze price trends over time</li>
+            <li>Identify key value drivers by region</li>
+            <li>Create market health indicators</li>
+            <li>Build interactive visualizations</li>
+            <h5>*Note: This part is subjective - visualize data, trends, make some cool graphs!, etc. </h5>
+
+        </ul>
+
+        
+
+        <h4>Required Libraries:</h4>
+        <pre><code>
+import pandas as pd
+import numpy as np
+import sklearn
+import matplotlib.pyplot as plt
+        </code></pre>
+
+        <h4>Skills:</h4>
+        <h5>Required Skills</h5>
+        <ul>
+            <li>Python programming</li>
+            <li>Data cleaning and preprocessing</li>
+            <li>Statistical analysis</li>
+            <li>Machine learning fundamentals</li>
+            <li>Data visualization</li>
+        </ul>
+
+        <h5>Advanced Skills (Bonus)</h5>
+        <ul>
+            <li>Advanced regression models</li>
+            <li>Time series analysis</li>
+            <li>Deep learning</li>
+        </ul>
+
+        
+
+        <h4>Useful Package Documentation:</h4>
+        <ol>
+            <li><strong>pandas</strong> (for data manipulation): <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">pandas Documentation</a></li>
+            <li><strong>scikit-learn</strong> (for model training): <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer">scikit-learn Documentation</a></li>
+            <li><strong>XGBoost</strong> (for gradient boosting): <a href="https://xgboost.readthedocs.io/" target="_blank" rel="noopener noreferrer">XGBoost Documentation</a></li>
+        </ol>
+    `,
+        },
+      ];
       const solutionsData = [];
 
       // const solutionsData = [
@@ -437,7 +532,7 @@
         projectElement.className = "project-container";
         projectElement.innerHTML = `
                 <div class="project-header">
-                    <h2>Project ${projectData.project}: ${projectData.title}</h2>
+                    <h2>MLScope ${projectData.project}: ${projectData.title}</h2>
                     <span class="toggle-icon"></span>
                 </div>
                 <div class="project-content">
