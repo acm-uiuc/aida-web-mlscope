@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ML-Scope Solutions</title>
-    <link rel="icon" type="image/x-icon" href="aida-logo.jpeg">
+    <link rel="icon" type="image/x-icon" href="aida-logo.jpeg" />
     <style>
       :root {
         --dark-blue: #1a365d;
@@ -114,84 +114,61 @@
       <h1>Solutions</h1>
       <div id="content"></div>
     </div>
-    <center><h2>None Yet :(</h2></center>
 
     <script>
-      const solutionsData = [];
+      const solutionsData = [
+        {
+          project: 1,
+          title: "Multi-City Housing Market Analysis & Prediction",
+          content: `
+            <h1>Project 1 Solution</h1>
 
-      //       const solutionsData = [
-      //         {
-      //           project: 1,
-      //           title: "House Price Prediction Solution",
-      //           content: `
-      //                     <h1>Project 1 Solutions</h1>
+            <h2>Summary</h2>
+            <h4>Baseline Models:</h4>
+            <ul>
+              <li>Linear Regression yielded an R² score of 0.63, which provided a reasonable starting point but showed limited capacity for capturing complex housing market relationships.</li>
+              <li>Decision Tree Regressor performed better with a score of 0.79, indicating improved ability to capture non-linear patterns in housing data.</li>
+              <li>Random Forest Regressor achieved a significantly better score of 0.85, making it the best among the baseline models.</li>
+            </ul>
 
-      //                     <h2>Summary</h2>
-      //                     <h4>Baseline Models:</h4>
+            <h4>Highest-Performing Solutions:</h4>
+            <ul>
+              <li>Gradient Boosting Regressor after hyperparameter tuning scored 0.92, demonstrating that ensemble methods with boosting can yield excellent results for this problem.</li>
+              <li>Random Forest with feature engineering (including distance to amenities and price-to-rent ratio) scored 0.89, highlighting the importance of thoughtful feature creation.</li>
+              <li>Neural Network implementation achieved comparable performance (0.90) but required significantly more computational resources.</li>
+            </ul>
 
-      // <ul>
-      // <li>Linear Regression yielded an R² score of 0.71, which is a reasonable baseline, but not highly accurate for predicting house prices.</li>
-      // <li>Decision Tree Classifier performed very poorly with a score of 0.0096, indicating it's unsuitable for this regression task.</li>
-      // <li>Random Forest Regressor achieved a significantly better score of 0.84, making it the best among the baseline models.</li>
-      // </ul>
+            <h4>Key Insights:</h4>
+            <ul>
+              <li>Location-based features showed the highest importance across all models, with proximity to employment centers being particularly significant.</li>
+              <li>Market segmentation revealed distinct price drivers in coastal vs. inland areas.</li>
+            </ul>
 
-      // <h4>Highest-Performing Solutions:</h4>
-      // <ul>
-      // <li>Gradient Boosting Regressor after tuning hyperparameters (max_depth=5, n_estimators=200) scored 0.90, showing that ensemble methods with boosting can yield very strong results.</li>
-      // <li>Random Forest Regressor (with 500 estimators) performed similarly, with a score of 0.89, demonstrating that increasing the number of trees from 100 to 500 provided a marginal improvement.</li>
-      // </ul>
+            <h4>Improvement Feedback:</h4>
+            <ol>
+              <li><strong>Improve Feature Engineering</strong>: Create meaningful features to enhance model performance.</li>
+              <li><strong>Use Advanced Models</strong>: Experiment with Random Forest, Gradient Boosting, and Neural Networks.</li>
+              <li><strong>Perform Hyperparameter Tuning</strong>: Optimize model performance using GridSearchCV or RandomizedSearchCV.</li>
+              <li><strong>Leverage Cross-Validation</strong>: Ensure the model generalizes well to unseen data.</li>
+              <li><strong>Enhance Visualizations</strong>: Use interactive tools like Plotly and Folium for better data communication.</li>
+              <li><strong>Incorporate Supplementary Data</strong>: Enrich the dataset with external sources like Zillow or Census data.</li>
+              <li><strong>Provide Deeper Insights</strong>: Analyze price trends, segment markets, and identify key value drivers.</li>
+              <li><strong>Evaluate Models Thoroughly</strong>: Use multiple metrics and compare results to benchmarks.</li>
+              <li><strong>Focus on Code Quality</strong>: Write clean, modular, and well-documented code.</li>
+            </ol>
 
-      // <h4>Takeaways:</h4>
+            <h4>Resources:</h4>
+            <a target="_blank" href="https://colab.research.google.com/drive/1FQ5uF8s0F_QIUrfVN2zPZAMZNOHKrtn2?usp=sharing">Link to Notebook</a>
+          `,
+        },
+      ];
 
-      // <ul>
-      // <li>Feature Scaling and hyperparameter tuning were essential for achieving high accuracy.</li>
-      // <li>Ensemble methods like Random Forest and Gradient Boosting Regressor consistently outperformed linear models.</li>
-      // <li>Grid search allowed further refinement of hyperparameters, slightly improving the model's performance.</li>
-      // </ul>
-      //                      <a target="_blank" href="https://colab.research.google.com/drive/1u9JW5vECvlZ6huyvz7xrhJj2HmDrlmb_?authuser=5#scrollTo=nsSyl5JME8nn">Link to Notebook</a>
-      //                     <br>
-      //                     <a target="_blank" href="https://docs.google.com/presentation/d/1qy1OWxAyliL4PSqrljxphXdFPLurtd8j52xF4pKdMwA/edit?usp=sharing">Link to Slides</a>
-
-      //                 `,
-      //         },
-
-      //         {
-      //           project: 2,
-      //           title: "Heart Disease Classification Solution",
-      //           content: `
-      //         <h1>Project 2 Solutions</h1>
-
-      //         <h2>Summary</h2>
-      //         <h4>Baseline Models:</h4>
-      //         <ul>
-      //             <li>Stochastic Gradient Descent Classifier (with log loss) yielded an accuracy of 0.72, providing a reasonable starting point but not highly reliable for medical predictions.</li>
-      //             <li>Random Forest Classifier achieved a much higher accuracy of 0.98, making it significantly better for classifying heart disease compared to SGD.</li>
-      //         </ul>
-
-      //         <h4>Highest-Performing Solutions:</h4>
-      //         <ul>
-      //             <li>Random Forest Classifier (with 100 estimators) was the top-performing model, reaching an accuracy of 0.98, indicating that ensemble methods are highly effective for this task.</li>
-      //         </ul>
-
-      //         <h4>Takeaways:</h4>
-      //         <ul>
-      //             <li>Random Forest outperformed linear classifiers, suggesting that decision tree-based models handle complex medical data better.</li>
-      //             <li>Increasing the number of trees in the forest can lead to more robust predictions, particularly when dealing with health-related datasets.</li>
-      //             <li>Future improvements could include exploring hyperparameter tuning and other advanced ensemble methods.</li>
-      //         </ul>
-
-      //         <a target="_blank" href="https://colab.research.google.com/drive/1TfhmyyxZ1njcXTghnxJuNAkaBVo-lWFW?usp=sharing">Link to Notebook</a>
-      //         <br>
-      //         <a target="_blank" href="https://docs.google.com/presentation/d/1ruvhrehQhAcr20RiEG_G6QNCvhQivFFeYbJUNscfafg/edit?usp=sharing">Link to Slides</a>
-      //     `,
-      //         },
-      //       ];
       function createProjectElement(projectData) {
         const projectElement = document.createElement("div");
         projectElement.className = "project-container";
         projectElement.innerHTML = `
                 <div class="project-header">
-                    <h2>Project ${projectData.project}: ${projectData.title}</h2>
+                    <h2>MLScope ${projectData.project}: ${projectData.title}</h2>
                     <span class="toggle-icon"></span>
                 </div>
                 <div class="project-content">
