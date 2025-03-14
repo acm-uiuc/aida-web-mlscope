@@ -183,7 +183,9 @@
     <div class="container">
       <h1>MLScope</h1>
       <center>
-        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfWwMAcIFMMUgdK2Ytjw-Hp0toiM2ClmkuefOqUvolxdm29_g/viewform?usp=dialog"
+        <a
+          target="_blank"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfWwMAcIFMMUgdK2Ytjw-Hp0toiM2ClmkuefOqUvolxdm29_g/viewform?usp=dialog"
           ><button class="btn">Challenge 2 Submission</button></a
         >
       </center>
@@ -634,6 +636,130 @@ import plotly.express as px
     <li><strong>Flask</strong> (for web applications): <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">Flask Documentation</a></li>
 </ol>
          `,
+        },
+        {
+          project: 3,
+          title: "Stock Market Prediction with Time Series Methods",
+          content: `
+    <p>In this challenge, you'll develop an advanced stock market prediction model using deep learning techniques like RNNs, LSTMs, while comparing them to traditional time series models like ARIMA. You'll explore feature engineering, interpretability, and the effectiveness of different approaches in predicting stock prices.</p>
+
+    <h4>Datasets:</h4>
+    <p><strong>Primary Dataset:</strong> Publicly available stock market data from:</p>
+    <ul>
+      <li><a href="https://finance.yahoo.com/" target="_blank" rel="noopener noreferrer">Yahoo Finance</a></li>
+      <li><a href="https://www.quandl.com/" target="_blank" rel="noopener noreferrer">Quandl</a></li>
+      <li><a href="https://www.alphavantage.co/" target="_blank" rel="noopener noreferrer">Alpha Vantage</a></li>
+      <li><a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer">Kaggle Stock Market Datasets</a></li>
+    </ul>
+
+    <h4>Supplementary Datasets (optional):</h4>
+    <ul>
+      <li>Public sentiment data (Twitter, Reddit, news sources)</li>
+      <li>Economic indicators (inflation rate, interest rates, unemployment)</li>
+      <li>Alternative data (climate effects, holiday trends)</li>
+    </ul>
+
+    <h4>Project Components (% of points):</h4>
+    
+    <h5>1. Data Preparation & Feature Engineering (25%)</h5>
+    <ul>
+      <li>Clean and preprocess stock market data</li>
+      <li>Handle missing values, outliers, and normalize appropriately</li>
+      <li>Feature engineering (choose at least three):
+        <ul>
+          <li>Volatility, moving averages, Bollinger Bands</li>
+          <li>Fourier or Wavelet Transform of time series data</li>
+          <li>Sentiment scores from news/social media</li>
+          <li>Time-based features (day of the week, market open/close trends)</li>
+          <li>Macroeconomic indicators (inflation rate, interest rates, unemployment)</li>
+        </ul>
+      </li>
+      <li>Perform exploratory data analysis (EDA) with stock market insights</li>
+      <li>Stationarity testing and transformations for time series models (optional)</li>
+    </ul>
+
+    <h5>2. Model Development & Comparison (45%)</h5>
+    <ul>
+      <li>Baseline Models:
+        <ul>
+          <li>ARIMA (or SARIMA)</li>
+          <li>Simple Moving Average & Exponential Smoothing</li>
+        </ul>
+      </li>
+      <li>Deep Learning Approaches:
+        <ul>
+          <li>RNN, LSTM, or GRU for stock price forecasting</li>
+        </ul>
+      </li>
+      <li>Model Comparison:
+        <ul>
+          <li>Compare deep learning models vs. traditional models using RMSE, MAE, MAPE</li>
+          <li>Backtesting strategy to evaluate performance on real data</li>
+          <li>Hyperparameter tuning (Bayesian search, Grid search, etc.)</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h5>3. Explainability & Feature Importance (20%)</h5>
+    <ul>
+      <li>Use SHAP, LIME, or attention mechanisms to explain model predictions</li>
+      <li>Identify key indicators that influence stock price movements</li>
+      <li>Analyze why simpler models may/may not outperform deep learning methods</li>
+      <li>Visualize feature impact using SHAP plots or correlation heatmaps</li>
+    </ul>
+
+    <h5>4. Advanced Implementation (10%) (Optional)</h5>
+    <ul>
+      <li>Deploy your model using a simple Streamlit/Flask dashboard</li>
+      <li>Implement a real-time data pipeline (fetch live stock data and predict)</li>
+      <li>Develop a basic trading strategy using reinforcement learning</li>
+      <li>Compare performance across different stock types (e.g., tech vs. commodities)</li>
+    </ul>
+
+    <h4>Required Libraries:</h4>
+    <pre><code>
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import yfinance as yf
+from statsmodels.tsa.arima.model import ARIMA
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense, Dropout
+import shap
+import plotly.express as px
+    </code></pre>
+
+    <h4>Skills:</h4>
+    <h5>Required Skills</h5>
+    <ul>
+      <li>Python programming</li>
+      <li>Time series analysis</li>
+      <li>Data preprocessing</li>
+      <li>Machine learning & deep learning fundamentals</li>
+      <li>Model evaluation techniques</li>
+    </ul>
+
+    <h5>Advanced Skills (Bonus)</h5>
+    <ul>
+      <li>Stock market analysis & financial metrics</li>
+      <li>Time series forecasting techniques (Fourier Transform, Wavelets)</li>
+      <li>Model interpretability (SHAP, LIME, Attention)</li>
+      <li>Reinforcement Learning for trading bots</li>
+      <li>Web deployment (Flask/Streamlit)</li>
+    </ul>
+
+    <h4>Useful Package Documentation:</h4>
+    <ol>
+      <li><strong>pandas</strong> (for data manipulation): <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">pandas Documentation</a></li>
+      <li><strong>scikit-learn</strong> (for model training): <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer">scikit-learn Documentation</a></li>
+      <li><strong>TensorFlow/Keras</strong> (for deep learning): <a href="https://www.tensorflow.org/guide/keras" target="_blank" rel="noopener noreferrer">Keras Documentation</a></li>
+      <li><strong>SHAP</strong> (for model interpretability): <a href="https://shap.readthedocs.io/" target="_blank" rel="noopener noreferrer">SHAP Documentation</a></li>
+    </ol>
+  `,
         },
       ];
       const solutionsData = [];
