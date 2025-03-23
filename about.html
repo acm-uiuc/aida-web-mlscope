@@ -1,49 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ML-Scope Solutions</title>
+    <title>SIGAIDA - About</title>
     <link rel="icon" type="image/x-icon" href="aida-logo.jpeg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <nav>
-      <div class="container">
-        <a href="index.html">
-          <img src="aida-logo.jpeg" alt="Logo" class="logo" />
-        </a>
-        <div class="nav-links">
-          <a href="index.html">Problems</a>
-          <a href="solutions.html">Solutions</a>
-          <a href="leaderboard.html">Leaderboard</a>
-          <a href="resources.html">Resources</a>
+    <style>
+        /* Additional Styles */
+        .hero-section {
+            background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #4e4376;
+        }
+
+        .cta-button {
+            background: #4e4376;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 1rem 0;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #2b5876;
+        }
+
+        .value-prop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <div class="container">
+            <div class="nav-links">
+            <a href="index.html">
+                <img src="aida-logo.jpeg" alt="SIGAIDA Logo" class="logo" />
+            </a>
+                <a href="index.html">Problems</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="resources.html">Resources</a>
+                <!--<a href="#contact" class="cta-button">Join Us</a>-->
+            </div>
         </div>
-      </div>
     </nav>
 
-    <div class="container">
-      <h1>About</h1>
-      <div id="content"></div>
+    <div class="hero-section">
+        <div class="container">
+            <h1>About SIGAIDA</h1>
+            <p class="lead">Empowering the next generation of AI & Data Analytics leaders</p>
+        </div>
     </div>
 
-    <div class="about-content" style="padding-left: 5vw">
-      <h2>Our Mission:</h2>
-       <p>
-        We seek to educate UIUC students on the fundamentals and state of the art topics in machine learning and data science. We have weekly/biweekly <a href="index.html">problems</a> that ramp up in difficulty and give a large breadth.
-      </p>
+    <main class="about-content">
+        <section class="section-card">
+            <div class="icon-header">
+                <i class="fas fa-bullseye fa-2x"></i>
+                <h2>Our Mission</h2>
+            </div>
+            <p class="highlight">
+                At SIGAIDA, we're committed to bridging the gap between academic knowledge and real-world AI/Data Science applications. Through our comprehensive program featuring:
+            </p>
+            <div class="value-prop-grid">
+                <div class="value-card">
+                    <i class="fas fa-chart-line fa-3x"></i>
+                    <h3>Progressive Learning</h3>
+                    <p>Weekly challenges that scale from fundamentals to industry-standard techniques</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users fa-3x"></i>
+                    <h3>Community Focus</h3>
+                    <p>Collaborative environment with peer learning and mentorship</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-industry fa-3x"></i>
+                    <h3>Student-Focused</h3>
+                    <p>SIGAIDA serves students and listens to their needs</p>
+                </div>
+            </div>
+        </section>
 
-      <h2>For Students:</h2>
-      <p>
-        We accept everyone as a member to the organization, as long as you are willing to learn and treat other members kindly with respect. There is no formal process to join the club, simply join the <a href="https://discord.gg/baZtMrqXan">Discord server</a> and we will post when our events are in the announcements channel. As of Spring 2025, we meet on Sundays at 1310 DCL, 12:30pm.
-      </p>
+        <section class="section-card">
+            <div class="icon-header">
+                <i class="fas fa-user-graduate fa-2x"></i>
+                <h2>For Students</h2>
+            </div>
+            <p>
+                Join our inclusive community of learners and practitioners! We welcome all UIUC students passionate about AI and Data Analytics, regardless of experience level. Benefits include:
+            </p>
+            <ul class="benefits-list">
+                <li><i class="fas fa-check"></i> Hands-on workshops and hackathons</li>
+                <li><i class="fas fa-check"></i> Networking opportunities with industry professionals</li>
+                <li><i class="fas fa-check"></i> Access to exclusive learning resources</li>
+                <li><i class="fas fa-check"></i> Career development support</li>
+            </ul>
+            <p>
+                Meeting Schedule: Sundays at 12:30 PM<br>
+                Location: 1310 DCL<br>
+                <a href="https://discord.gg/baZtMrqXan" class="cta-button">
+                    <i class="fab fa-discord"></i> Join Discord
+                </a>
+            </p>
+        </section>
 
-      <h2>For Companies:</h2>
-      <p>
-        We are always looking for companies to sponsor our club and provide us with resources to help our members learn. If you are interested in sponsoring us, please reach out by emailing <a href="mailto:handzel4@illinois.edu">handzel4@illinois.edu</a>.
-      </p>
+        <section class="section-card">
+            <div class="icon-header">
+                <i class="fas fa-handshake fa-2x"></i>
+                <h2>For Companies</h2>
+            </div>
+            <p>
+                Partner with SIGAIDA to shape the future of AI talent. Our sponsorship opportunities offer:
+            </p>
+            <div class="value-prop-grid">
+                <div class="value-card">
+                    <i class="fas fa-network-wired fa-3x"></i>
+                    <h3>Recruitment Access</h3>
+                    <p>Direct connection with high-potential students</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-eye fa-3x"></i>
+                    <h3>Brand Visibility</h3>
+                    <p>Showcase your commitment to nurturing future AI talent and making a positive impact on students' careers</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb fa-3x"></i>
+                    <h3>Innovation Pipeline</h3>
+                    <p>Collaborate on real-world problem solving</p>
+                </div>
+            </div>
+            <p>
+                Contact us to discuss partnership opportunities:<br>
+                <a href="mailto:handzel4@illinois.edu" class="cta-button">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+            </p>
+        </section>
+    </main>
 
-    </div>
-
-  </body>
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
 </html>
