@@ -182,11 +182,11 @@
 
     <div class="container">
       <h1>MLScope</h1>
-      <center>
+      <!-- <center>
         <a target="_blank" href="https://forms.gle/nuFhZQGWQeMPb11t8"
           ><button class="btn">Challenge 2 Submission</button></a
         >
-      </center>
+      </center> -->
       <div id="content"></div>
     </div>
     <!-- <center>
@@ -634,6 +634,100 @@ import matplotlib.pyplot as plt
             <li><strong>Flask</strong> (for web applications): <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">Flask Documentation</a></li>
         </ol>
                  `,
+        },
+        {
+          project: 3,
+          title: "LLM-Powered E-Commerce Review Analysis",
+          content: `
+    <p>In this project, you'll leverage a Large Language Model (LLM) to predict product ratings based on customer reviews and other product attributes. The primary goal is to move beyond traditional machine learning models and explore the power of generative AI for text understanding and classification. You will engineer prompts that guide the Google Gemini API to analyze qualitative feedback and return a quantitative rating.</p>
+
+    <h4>Datasets:</h4>
+    <p><strong>Primary Dataset:</strong> <a href="https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews" target="_blank" rel="noopener noreferrer">Women's E-Commerce Clothing Reviews Dataset</a></p>
+    <p>This dataset contains real, anonymized customer reviews and includes features such as the review text, customer age, product category, and the assigned rating (the target variable, on a scale of 1-5).</p>
+    
+    <p><strong>Supplementary Datasets (optional):</strong></p>
+    <ul>
+        <li><a href="https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products" target="_blank" rel="noopener noreferrer">Amazon Product Reviews</a></li>
+        <li><a href="https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews" target="_blank" rel="noopener noreferrer">IMDB Dataset of 50K Movie Reviews</a></li>
+    </ul>
+
+    <h4>Project Components (% of points):</h4>
+    <h5>1. Data Preparation & Prompt Engineering (30%)</h5>
+    <ul>
+        <li>Clean and preprocess the text data (e.g., handle missing reviews, remove noise).</li>
+        <li>Perform exploratory data analysis to understand the distribution of ratings and common themes in reviews.</li>
+        <li><strong>Engineer effective prompts</strong>: Design and test different prompt structures to feed into the Gemini API. This is the most critical part of the project. Some methods to consider:
+            <ul>
+                <li><strong>Zero-shot prompting:</strong> Ask the model to rate the review with no examples.</li>
+                <li><strong>Few-shot prompting:</strong> Provide a few examples of reviews and their ratings within the prompt to guide the model.</li>
+                <li><strong>Feature-rich prompting:</strong> Incorporate other features (like <code>Product Category</code> or <code>Department</code>) into the prompt to see if it improves accuracy.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h5>2. Model Implementation & Prediction (45%)</h5>
+    <ul>
+        <li>Set up the Google Gemini API using the provided quickstart guide.</li>
+        <li>Write a script to iterate through your test dataset, sending a prompt for each review to the API.</li>
+        <li>Parse the LLM's response to reliably extract the predicted numerical rating (1-5).</li>
+        <li>Implement robust error handling for API calls and response parsing.</li>
+        <li><strong>Advanced Options (optional):</strong>
+            <ul>
+                <li><strong>Chain-of-Thought Reasoning:</strong> Modify your prompt to ask the model to "think step-by-step" about why a review deserves a certain rating before giving the final answer.</li>
+                <li><strong>Ensemble Methods:</strong> Combine the LLM's prediction with a prediction from a traditional model (like Naive Bayes or Logistic Regression) trained on the same data.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h5>3. Evaluation & Analysis (25%)</h5>
+    <ul>
+        <li>Calculate the overall <strong>accuracy score</strong> of your predictions against the true ratings.</li>
+        <li>Generate a <strong>confusion matrix</strong> to visualize which ratings the model confuses most often (e.g., does it frequently mistake a 4-star review for a 5-star one?).</li>
+        <li>Analyze the model's failures. Identify types of reviews (e.g., sarcastic, short, or ambiguous ones) where the LLM performs poorly.</li>
+        <li>Create visualizations to compare the distribution of predicted ratings vs. actual ratings.</li>
+        <li><h5>*Note: This part is subjective - analyze why the model failed on certain reviews, make some cool graphs!, etc.!*</h5></li>
+    </ul>
+
+    <h4>Useful Libraries:</h4>
+    <pre><code>
+import pandas as pd
+import numpy as np
+import os
+import google.generativeai as genai
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+import matplotlib.pyplot as plt
+import seaborn as sns
+    </code></pre>
+
+    <h4>Skills:</h4>
+    <h5>Required Skills</h5>
+    <ul>
+        <li>Python programming</li>
+        <li>Data cleaning and manipulation with pandas</li>
+        <li>Interacting with APIs</li>
+        <li>Fundamentals of prompt engineering</li>
+        <li>Model evaluation for classification tasks (accuracy, confusion matrix)</li>
+    </ul>
+
+    <h5>Advanced Skills (Bonus)</h5>
+    <ul>
+        <li>Advanced prompting techniques (Chain-of-Thought, few-shot)</li>
+        <li>Ensemble modeling</li>
+        <li>Error analysis and model interpretation</li>
+        <li>Handling rate limits and batching API requests</li>
+        <li>Sentiment analysis with traditional ML models (for comparison)</li>
+    </ul>
+
+    <h4>Useful Package Documentation:</h4>
+    <ol>
+        <li><strong>Google AI for Developers</strong> (for Gemini API setup): <a href="https://ai.google.dev/gemini-api/docs/quickstart" target="_blank" rel="noopener noreferrer">Gemini API Quickstart</a></li>
+        <li><strong>pandas</strong> (for data manipulation): <a href="https://pandas.pydata.org/pandas-docs/stable/" target="_blank" rel="noopener noreferrer">pandas Documentation</a></li>
+        <li><strong>scikit-learn</strong> (for model evaluation): <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer">scikit-learn Documentation</a></li>
+        <li><strong>Matplotlib</strong> (for data visualization): <a href="https://matplotlib.org/stable/contents.html" target="_blank" rel="noopener noreferrer">matplotlib Documentation</a></li>
+        <li><strong>Seaborn</strong> (for data visualization): <a href="https://seaborn.pydata.org/" target="_blank" rel="noopener noreferrer">Seaborn Documentation</a></li>
+    </ol>
+  `,
         },
         //         {
         //           project: 3,
